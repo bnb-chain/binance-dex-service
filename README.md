@@ -1,20 +1,20 @@
-Binance DEX REST signing service
+BNB DEX REST signing service
 ================================
 
 Service is similar to XML digital signature services for signing with X509 certificates.
 
-Service exposes GET methods to generate payload containing Binance DEX StdTx: message, signature
+Service exposes GET methods to generate payload containing BNB DEX StdTx: message, signature
 
-Payload from GET methods can be broadcasted to Binance DEX block chain.
+Payload from GET methods can be broadcasted to BNB DEX block chain.
 
-Service also exposes conviniece GET method for broadcasting to Binance DEX chain (/broadcast).
+Service also exposes conviniece GET method for broadcasting to BNB DEX chain (/broadcast).
 
 Program languages capable of integrating with REST services can easily integrate with REST signing service (e.g. Javascript and call it from browser).
 
 Building
 ========
 
-Service is written in Java language using Binance DEX Java SDK (https://github.com/binance-chain/java-sdk) and Spring Boot Framework (https://spring.io/).
+Service is written in Java language using BNB DEX Java SDK (https://github.com/BNB-chain/java-sdk) and Spring Boot Framework (https://spring.io/).
 
 Maven build: mvn clean package
 
@@ -24,9 +24,9 @@ Example: java -jar binance-dex-service-1.0.0.jar --wallet.name=wallet ---wallet.
 
 Service starts on localhost port 8080 browse to URL: http://127.0.0.1:8080/
 
-YouTube example how to use Binance DEX Signing Service
+YouTube example how to use BNB DEX Signing Service
 
-[![How to use Binance DEX Signing Service](http://img.youtube.com/vi/i1xC6DI5ias/0.jpg)](http://www.youtube.com/watch?v=i1xC6DI5ias)
+[![How to use BNB DEX Signing Service](http://img.youtube.com/vi/i1xC6DI5ias/0.jpg)](http://www.youtube.com/watch?v=i1xC6DI5ias)
 
 Command line arguments
 ======================
@@ -186,7 +186,7 @@ HTTP GET request for /transfer:
 http://127.0.0.1:8080/transfer?name=testWallet&pin=1234&coin=PND-943&toAddress=tbnb18086qc9yxtk5ufddple8upf0k3072vvagpm2ml&amount=0.1
 ```
 
-HTTP GET request returns signed message ready to for broadcast to Binance DEX chain node
+HTTP GET request returns signed message ready to for broadcast to BNB DEX chain node
 
 ```
 ce01f0625dee0a542a2c87fa0a260a149f93198fa769ece70f604aa18447d437600fdc7c120e0a07504e442d3934331080ade20412260a143bcfa060a432ed4e25ad0ff27e052fb45fe5319d120e0a07504e442d3934331080ade20412700a26eb5ae98721026804663998b70b88e916232cfe22337f5a2d0c3e8fb64ca656314128e9fd89db1240ef51400ba6d6cdcae44b31e0a251e24c2ed290045dd2a3114c67c8398cad8d46752e2170bafce74b03c5503c754f6d92688c45a2be74780d998c1187e342e96e18c40620cd042003
@@ -199,7 +199,7 @@ HTTP GET request for /broadcast:
 127.0.0.1:8080/broadcast?name=myPhrase&pin=1234&payload=ce01f0625dee0a542a2c87fa0a260a149f93198fa769ece70f604aa18447d437600fdc7c120e0a07504e442d3934331080ade20412260a143bcfa060a432ed4e25ad0ff27e052fb45fe5319d120e0a07504e442d3934331080ade20412700a26eb5ae98721026804663998b70b88e916232cfe22337f5a2d0c3e8fb64ca656314128e9fd89db1240ef51400ba6d6cdcae44b31e0a251e24c2ed290045dd2a3114c67c8398cad8d46752e2170bafce74b03c5503c754f6d92688c45a2be74780d998c1187e342e96e18c40620cd042003
 ```
 
-Binance chain returns:
+BNB Beacon Chain returns:
 ``` JSON
 [{"code":0,"data":null,"hash":"F65306A58D6BDC7E12DF7C2FE6B9A516F041D7D324DC267526C8A109BD54F855","log":"Msg 0: ","ok":true}]
 ```
