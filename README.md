@@ -1,3 +1,5 @@
+**This repo is out of maintenance and decommissioned.**
+
 BNB DEX REST signing service
 ================================
 
